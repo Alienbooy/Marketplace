@@ -1,0 +1,280 @@
+.detalle-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detalle-conteiner img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.detalle-info {
+  width: 100%;
+  text-align: center;
+  padding: 3px;
+}
+
+
+.detalle-info p {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+  line-height: 1.5;
+  padding: 0 5px;
+  text-align: justify;
+}
+
+.detalle-info strong {
+  color: #111;
+}
+
+.detalle-chat {
+  display: flex;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.detalle-chat input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.detalle-chat button {
+  background-color: #FFD000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.detalle-chat button:hover {
+  background-color: #e0b000;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.carousel-slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.detalle-chat {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.detalle-chat input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.detalle-chat .btn-enviar {
+  background-color: #FFD000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.detalle-chat .btn-enviar:hover {
+  background-color: #e0b000;
+}
+
+.like-container {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-like {
+  background-color: #FFD000;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-like.guardado {
+  background-color: #ccc;
+  color: #444;
+}
+
+.btn-like:hover {
+  background-color: #e0b000;
+}
+
+.titulo-like {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.titulo-like h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  padding: 0 5px;
+}
+
+.btn-like.guardado {
+  background-color: gray;
+  color: white;
+}
+
+
+@media (min-width: 768px) {
+
+  .titulo-like h2 {
+    font-size: 25px;
+    padding: 0px 0px 0px 5px;
+  }
+
+  .detalle-info p {
+    font-size: 16px;
+  }
+
+  .detalle-conteiner {
+    margin: 30px auto;
+    max-width: 600px;
+  }
+
+  .detalle-chat input[type="text"] {
+    padding: 0.6rem 1rem;
+  }
+
+  .carousel-slide{
+    min-width: 100%;
+    height: 80%;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .detalle-conteiner {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 900px;
+    height: 600px;
+    margin: 25px auto;
+  }
+
+  .detalle-info {
+    flex: 1;
+    text-align: left;
+    padding: 10px 5px;
+    margin-top: 20px;
+  }
+
+  .detalle-chat {
+    margin-top: 50px;
+  }
+
+  .titulo-like h2 {
+    font-size: 26px;
+    padding: 20px 5px;
+  }
+
+  .detalle-info p {
+    font-size: 20px;
+    padding: 0px 5px;
+    margin-top: 15px;
+  }
+
+    .carousel-container {
+    flex: 1;
+    max-width: 60%;
+    height: 100%;
+    margin-top: 20px;
+  }
+
+  .carousel-slide img {
+    max-width: 90%;
+    height: 100%;
+    object-fit: cover;
+    padding: 15px;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .detalle-conteiner {
+    gap: 0;
+  }
+}

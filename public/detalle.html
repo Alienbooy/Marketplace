@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle-Producto</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/detalle.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./image/logo.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./market.html">Marketplace</a></li>
+                <li class="dropdown">
+                    <a href="#">Mi Cuenta <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="/login.html" onclick="abrirLoginModal()">Iniciar sesión</a></li>
+                        <li><a href="/registro.html">Registro</a></li>
+                        <li><a href="./likes.html">Mis Likes</a></li>
+                        <li><a href="./formulario.html">Crear Anuncio</a></li>
+                        <li><a href="./misAnuncios.html">Mis Anuncios</a></li>
+                        <li><a href="./mensajes.html">Mis mensajes</a></li>
+                    </ul>
+                </li> 
+                <li><a href="./acercade.html">Acerca de nosotros</a></li>
+            </ul>
+        </nav>
+        <input type="text" class="search-bar" placeholder="Escribe y presiona Enter...">
+    </header>
+
+    <main>
+        <section class="detalle-conteiner" id="">
+
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>contacto</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/anyelitogv/"><img src="./image/Icon/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="./image/Icon/Tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="./image/Icon/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./image/Icon/icon-wpp.png" alt="WhatsApp"></a>
+        </div>
+    </footer>
+
+        <div id="loginModal" class="modal">
+        <div class="modal-box">
+            <button class="close-modal">&times;</button>
+            <input type="checkbox" id="toggleForm" hidden>
+
+            <div class="form-toggle-labels">
+                <label for="toggleForm" class="label-login">Login</label>
+                <label for="toggleForm" class="label-register">Registro</label>
+            </div>
+
+            <div class="form-container">
+                <form action="/login" id="login-form" class="form-side form-login" method="post" novalidate>
+                    <h2>Iniciar sesión</h2>
+
+                    <input type="email" id="login-email" placeholder="Email">
+                    <div class="error" id="error-login-email"></div>
+
+                    <input type="password" id="login-password" placeholder="Contraseña">
+                    <div class="error" id="error-login-password"></div>
+
+                    <button type="submit" id="login-button">Entrar</button>
+                    <div class="error" id="login-error-mensaje"></div>
+                </form>
+
+            
+                <form action="/registro" id="registro-form" class="form-side form-register" method="post" novalidate>
+                    <h2>Crear cuenta</h2>
+
+                    <input type="text" id="registro-nombre" placeholder="Nombre completo">
+                    <div class="error" id="error-nombre"></div>
+
+                    <input type="email" id="registro-email" placeholder="Email">
+                    <div class="error" id="error-email"></div>
+
+                    <input type="password" id="registro-password" placeholder="Contraseña">
+                    <div class="error" id="error-password"></div>
+
+                    <button type="submit">Registrarse</button>
+                    <div id="registro-error-mensaje" class="error"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./JavaScripts/LoginRegistro.js"></script>
+    <script src="./JavaScripts/session.js"></script>  
+    <script src="./JavaScripts/logReg.js"></script>
+    <script src="./JavaScripts/dinamicoJs/detalle.js"></script>
+    <script src="./JavaScripts/like.js" ></script>
+</body>
+
+</html>

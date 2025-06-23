@@ -1,0 +1,130 @@
+
+.likes-header {
+  background-color: #FFD000;
+  color: #111;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 12px 16px;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.likes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.anuncio-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.anuncio-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.anuncio-card h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.2rem;
+  color: #222;
+}
+
+.anuncio-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.boton-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.boton-group button {
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-group .btn-like {
+  background-color: red;
+  color: white;
+}
+
+.boton-group .btn-like:hover {
+  background-color: darkred;
+}
+
+.boton-group .btn-ver {
+  background-color: #FFD000;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.boton-group .btn-ver:hover {
+  background-color: #e0b000;
+}
+
+@media (min-width: 768px) {
+  .likes-header {
+    font-size: 1.6rem;
+    padding: 16px 24px;
+  }
+
+  .likes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2rem;
+  }
+
+  .anuncio-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .anuncio-card p {
+    font-size: 1rem;
+  }
+
+  .boton-group button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .likes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 3rem;
+  }
+
+  .likes-header {
+    font-size: 1.8rem;
+    padding: 20px 32px;
+  }
+
+  .anuncio-card img {
+    max-height: 200px;
+  }
+
+  .boton-group button {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario De Anuncios</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/formulario.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./image/logo.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./market.html">Marketplace</a></li>
+                <li class="dropdown">
+                    <a href="#">Mi Cuenta <span class="arrow"></span></a>
+                    <ul class="dropdown-content">
+                        <li><a href="/login.html">Iniciar sesión</a></li>
+                        <li><a href="/registro.html">Registro</a></li>
+                        <li><a href="./likes.html">Mis Likes</a></li>
+                        <li><a href="./formulario.html">Crear Anuncio</a></li>
+                        <li><a href="./misAnuncios.html">Mis Anuncios</a></li>
+                        <li><a href="./mensajes.html">Mis mensajes</a></li>
+                    </ul>
+                </li> 
+                <li><a href="./acercade.html">Acerca de nosotros</a>
+                </li>
+            </ul>
+        </nav>
+        <input type="text" class="search-bar" placeholder="Escribe y presiona Enter...">
+    </header>
+
+    <main>
+        <div class="form-anuncio-container">
+            <a href="/misAnuncios.html" class="btn-cerrar" title="Volver atrás">×</a>
+            <h2>Publicar anuncio</h2>
+            <form id="form-anuncio" enctype="multipart/form-data" method="POST">
+                <label for="titulo">Título</label>
+                <input type="text" name="titulo" id="titulo" required>
+
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" rows="4" required></textarea>
+
+                <label for="precio">Precio (Bs)</label>
+                <input type="number" name="precio" id="precio" required>
+
+                <label for="estado">Estado del producto</label>
+                <select name="estado" id="estado" required>
+                    <option value="nuevo">Nuevo</option>
+                    <option value="usado-como nuevo">Usado (como nuevo)</option>
+                    <option value="usado-Buen estado">Usado (Buen estado)</option>
+                    <option value="usado-aceptable">Usado (Aceptable)</option>
+                </select>
+
+                <label for="categoria">Categoría</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="1">Periféricos</option>
+                    <option value="2">Celulares</option>
+                    <option value="3">Cámaras</option>
+                    <option value="4">TV</option>
+                    <option value="5">Laptop</option>
+                    <option value="6">PC</option>
+                    <option value="7">Consolas</option>
+                    <option value="8">Componentes</option>
+                </select>
+
+                <label for="imagenes">Imágenes del producto</label>
+                <input type="file" id="imagenes" multiple accept="image/*">
+
+                <div class="imagen-preview" id="preview"></div>
+
+                <button type="submit">Publicar Anuncio</button>
+            </form>
+        </div>
+    </main>
+
+
+
+    <footer>
+      <p>@contacto</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/anyelitogv/"><img src="./image/Icon/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="./image/Icon/Tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="./image/Icon/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./image/Icon/icon-wpp.png" alt="WhatsApp"></a>
+        </div>
+    </footer>
+    
+    <script src="./JavaScripts/session.js"></script>
+    <script src="./JavaScripts/dinamicoJs/formulario.js"></script>
+    
+</body>
+</html>

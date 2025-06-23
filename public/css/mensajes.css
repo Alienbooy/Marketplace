@@ -1,0 +1,213 @@
+.chat-container {
+  padding: 20px;
+  color: #fff;
+  background-color: #1F1F1F;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #FFD000;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: black;
+}
+
+.tab.active {
+  background-color: black;
+  color: #FFD000;
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.listado {
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+}
+
+.column-title {
+  display: flex;
+  background-color: #FFD000;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+}
+
+.anuncios-title, .personas-title {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-right: 1px solid #000;
+}
+
+.item {
+  display: flex;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item:hover {
+  background-color: #3a3a3a;
+}
+
+.anuncio, .persona {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border-right: 1px solid #444;
+}
+
+.chat-box {
+  background-color: #2b2b2b;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #333;
+}
+
+.mensajes {
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: #1F1F1F;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.mensaje {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.mensaje.enviado {
+  background-color: #FFD000;
+  color: black;
+  align-self: flex-end;
+}
+
+.mensaje.recibido {
+  background-color: #333;
+  color: white;
+  align-self: flex-start;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #444;
+  color: white;
+}
+
+.input-area button {
+  background-color: #FFD000;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s;
+}
+
+.input-area button:hover {
+  background-color: #e6be00;
+}
+
+.contenido-anuncios, .contenido-personas {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido-anuncios .item, .contenido-personas .item {
+  display: flex;
+  border-bottom: 1px solid #444;
+}
+
+.contenido-anuncios .anuncio, .contenido-personas .persona {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+}
+
+.contenido-anuncios .persona,
+.contenido-personas .anuncio {
+  display: none;
+}
+
+
+
+@media (min-width: 678px) {
+  .chat-content {
+    flex-direction: row;
+  }
+
+  .listado {
+    width: 35%;
+  }
+
+  .chat-box {
+    width: 65%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .chat-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .tab {
+    font-size: 16px;
+  }
+
+  .mensaje {
+    font-size: 16px;
+  }
+
+  .mensajes {
+    min-height: 430px;
+    max-height: 300px;
+  }
+
+  .chat-box {
+    width: 85%;	
+  }
+
+  .input-area input {
+    font-size: 15px;
+  }
+}
