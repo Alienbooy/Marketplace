@@ -24,6 +24,19 @@ exports.obtenerPorVendedor = async (idVendedor) => {
   ).rows;
 };
 
+exports.obtenerPorCategoria = async (nombreCategoria) => {
+  const sql = `
+    SELECT a.*, c.nombre AS categoria, u.nombre_completo AS vendedor
+    FROM anuncio a
+    JOIN categoria c ON a.categoria_id = c.id
+    JOIN usuario u ON a.vendedor_id = u.id
+    WHERE LOWER(c.nombre) = LOWER($1)
+    ORDER BY a.id DESC
+  `;
+  const { rows } = await pool.query(sql, [nombreCategoria]);
+  return rows;
+};
+
 
 exports.obtenerPorId = async (id) => {
   const sql = `

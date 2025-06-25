@@ -80,6 +80,16 @@ exports.obtenerAnuncios = async (req, res) => {
   }
 };
 
+exports.obtenerPorCategoria = async (req, res) => {
+  try {
+    const nombreCategoria = req.params.nombre;
+    const anuncios = await anuncioRepository.obtenerPorCategoria(nombreCategoria);
+    res.json(anuncios);
+  } catch (error) {
+    console.error('Error al filtrar por categoría:', error);
+    res.status(500).json({ message: 'Error al obtener anuncios por categoría.' });
+  }
+};
 
 exports.obtenerMisAnuncios = async (req, res) => {
   try {

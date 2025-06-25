@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     imagenContainer.appendChild(slider);
     imagenContainer.appendChild(nextBtn);
 
+    
     const info = document.createElement('div');
     info.classList.add('detalle-info');
     info.innerHTML = `
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         <button class="btn-enviar">Enviar</button>
       </div>
     `;
+ 
 
     contenedor.appendChild(imagenContainer);
     contenedor.appendChild(info);
@@ -86,61 +88,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     showSlide(currentIndex);
-
-    const btnEnviar = info.querySelector('.btn-enviar');
-    const inputMensaje = info.querySelector('input[type="text"]');
-    const token = localStorage.getItem('token');
-
-    btnEnviar.addEventListener('click', async () => {
-      const contenido = inputMensaje.value.trim();
-      if (!contenido) return alert('Escribe un mensaje primero.');
-
-      if (!token) {
-        alert('Debes iniciar sesión para enviar mensajes.');
-        return (window.location.href = '/login.html');
-      }
-
-        const payload = JSON.parse(atob(token.split('.')[1]));
-        const idUsuario = payload.anuncio_id
-
-          if (idUsuario === anuncio.vendedor_id) {
-            alert("No puedes enviarte un mensaje a ti mismo.");
-            return;
-          }
-          console.log(idUsuario, anuncio.vendedor_id);
-
-      try {
-      
-        const resConv = await fetch('/api/conversaciones', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          },
-          body: JSON.stringify({ anuncio_id: id })
-        });
-
-        const { id: conversacion_id } = await resConv.json();
-
-       
-        const resMsg = await fetch('/api/mensajes', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          },
-          body: JSON.stringify({ conversacion_id, contenido })
-        });
-
-        const data = await resMsg.json();
-        alert(data.message || 'Mensaje enviado');
-        inputMensaje.value = '';
-      } catch (err) {
-        console.error('Error al enviar mensaje:', err);
-        alert('Error al enviar mensaje.');
-      }
-    });
-
   } catch (error) {
     console.error('Error al cargar el anuncio:', error);
     contenedor.innerHTML = '<p style="text-align:center; margin:2rem;">Error al cargar el anuncio.</p>';

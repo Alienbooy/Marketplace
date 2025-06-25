@@ -2,7 +2,7 @@ const repo = require('../repositories/conversacionRepository');
 
 exports.crearConversacion = async (req, res) => {
   try {
-    const interesado_id = req.user.id; 
+    const interesado_id = req.user.id_usuario; 
     const { anuncio_id } = req.body;
 
     const existente = await repo.existeConversacion(anuncio_id, interesado_id);
