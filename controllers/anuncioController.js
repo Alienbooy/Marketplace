@@ -33,8 +33,10 @@ exports.crearAnuncio = async (req, res) => {
 
 exports.editarAnuncio = async (req, res) => {
   try {
-    const id = req.params.id_usuario;
+    const id = req.params.id;
     const { titulo, descripcion, precio, estado, categoria } = req.body;
+
+    
 
     const actualizado = await anuncioRepository.actualizarAnuncio(id, {
       titulo,
