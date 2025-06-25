@@ -110,7 +110,7 @@ exports.obtenerMisAnuncios = async (req, res) => {
 
 exports.obtenerAnuncioPorId = async (req, res) => {
   try {
-    const anuncio = await anuncioRepository.obtenerPorId(req.params.id_usuario);
+    const anuncio = await anuncioRepository.obtenerPorId(req.params.id);
     if (!anuncio) return res.status(404).json({ message: 'Anuncio no encontrado.' });
 
     anuncio.imagenes = await imagenRepository.obtenerImagenesPorAnuncio(req.params.id);
@@ -120,6 +120,7 @@ exports.obtenerAnuncioPorId = async (req, res) => {
     res.status(500).json({ message: 'Error al obtener el anuncio.' });
   }
 };
+
 
 
 exports.cambiarPublicado = async (req, res) => {
