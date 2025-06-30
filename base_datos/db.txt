@@ -1,0 +1,60 @@
+CREATE TABLE usuario (
+    id SERIAL PRIMARY KEY,
+    nombre_completo VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) UNIQUE NOT NULL,
+    contrasenia VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE categoria (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE anuncio (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio NUMERIC(10, 2) NOT NULL,
+    publicado BOOLEAN DEFAULT TRUE,
+    vendedor_id INTEGER NOT NULL,
+    categoria_id INTEGER NOT NULL,
+    FOREIGN KEY (vendedor_id) REFERENCES usuario(id),
+    FOREIGN KEY (categoria_id) REFERENCES categoria(id),
+    estado VARCHAR(30) NOT NULL CHECK (
+        estado IN ('nuevo', 'usado-como nuevo', 'usado-Buen estado', 'usado-aceptable')
+    )
+);
+
+CREATE TABLE imagen (
+    id SERIAL PRIMARY KEY,
+    url TEXT NOT NULL,
+    anuncio_id INTEGER NOT NULL,
+    FOREIGN KEY (anuncio_id) REFERENCES anuncio(id)
+);
+
+CREATE TABLE conversacion (
+    id SERIAL PRIMARY KEY,
+    anuncio_id INTEGER NOT NULL,
+    interesado_id INTEGER NOT NULL,
+    FOREIGN KEY (anuncio_id) REFERENCES anuncio(id),
+    FOREIGN KEY (interesado_id) REFERENCES usuario(id)
+);
+
+CREATE TABLE mensaje (
+    id SERIAL PRIMARY KEY,
+    contenido TEXT NOT NULL,
+    fecha_hora TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    emisor_id INTEGER NOT NULL,
+    conversacion_id INTEGER NOT NULL,
+    FOREIGN KEY (emisor_id) REFERENCES usuario(id),
+    FOREIGN KEY (conversacion_id) REFERENCES conversacion(id)
+);
+
+CREATE TABLE anuncio_guardado (
+    id SERIAL PRIMARY KEY,
+    usuario_id INTEGER NOT NULL,
+    anuncio_id INTEGER NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id),
+    FOREIGN KEY (anuncio_id) REFERENCES anuncio(id),
+    UNIQUE (usuario_id, anuncio_id)
+);
