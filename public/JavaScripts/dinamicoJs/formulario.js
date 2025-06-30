@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-
   if (anuncioId) {
     try {
       const res = await fetch(`/api/anuncios/${anuncioId}`);
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       form.estado.value = anuncio.estado;
       form.categoria.value = anuncio.categoria_id || 1;
 
-      if (anuncio.imagenes?.length > 0) {
+      if (Array.isArray(anuncio.imagenes) && anuncio.imagenes.length > 0) {
         anuncio.imagenes.forEach(img => {
           const imgEl = document.createElement('img');
           imgEl.src = img.url;

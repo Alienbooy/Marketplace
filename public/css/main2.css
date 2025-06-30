@@ -1,0 +1,306 @@
+/* === Estilos base para móvil === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #1F1F1F;
+}
+
+main {
+  flex: 1;
+}
+
+
+h2 {
+  font-family: Arial,sans-serif;
+  font-size: 30px;
+  color: #FFD000;
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 20px 25px;
+}
+
+
+.p text {
+  font-family: cursive;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+
+.auth-buttonsOne button {
+  background-color: rgb(255, 208, 0); 
+    border: none;
+    border-radius: 1.9em; 
+    color: black; 
+    font-size: 16px; 
+    font-weight: 600; 
+    width: 50px; 
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103); 
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+.login-box login-form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+.login-box a:hover {
+  background: #FFD000;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #FFD000,
+              0 0 25px #FFD000,
+              0 0 50px #FFD000,
+              0 0 100px #FFD000;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(1) {
+  bottom: 2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FFD000);
+  animation: btn-anim1 2s linear infinite;
+}
+
+.funciona {
+  width: 100%;
+  background-color: #1F1F1F;
+  padding: 30px 10px;
+  box-sizing: border-box;
+}
+
+.funciona-title {
+  font-size: 30px;
+  color: #FFD000;
+  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.funciona-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.funciona-item {
+  background-color: #333;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 480px;
+  max-width: 590px;
+  transition: transform 0.3s ease;
+}
+
+.funciona-item:hover {
+  transform: translateY(-5px);
+}
+
+.funciona-item img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 15px;
+}
+
+.funciona-item h3 {
+  color: #FFD000;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.funciona-item p {
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 10px 20px;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-toggle-labels {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.form-toggle-labels label {
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  transition: 0.3s ease;
+}
+
+.form-toggle-labels label:hover {
+  color: #FFD000;
+}
+
+.form-container {
+  display: flex;
+  width: 200%;
+  transform: translateX(0%);
+  transition: transform 0.5s ease;
+}
+
+#toggleForm:checked ~ .form-container {
+  transform: translateX(-50%);
+}
+
+.form-side {
+  width: 50%;
+  padding: 15px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.form-side h2 {
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-side input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.form-side button {
+  background: #FFD000;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.form-side button:hover {
+  background: #e6be00;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 4px 0 10px 0;
+  display: none;
+}
+
+
+
+
+

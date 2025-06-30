@@ -1,0 +1,119 @@
+.destacados-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.destacado-card {
+  background-color: #fff;
+  border: 2px solid #FFD000;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 95%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+}
+
+.destacado-card img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.destacado-card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.destacado-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.destacado-card .vendedor {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.detalle-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #FFD000;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.detalle-btn:hover {
+  background-color: #e0b800;
+}
+
+.destacado-card:hover {
+  transform: translateY(-8px);
+}
+
+@media (min-width: 767px) {
+  .destacado-card {
+    width: 280px;
+    max-width: 100%;
+  }
+
+  .destacados-grid {
+    padding: 14px 30px;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+    .destacados-grid {
+        padding: 16px 32px;
+        gap: 34px;
+    }
+
+    .destacado-card {
+        width: 380px;
+        max-width: 100%;
+    }
+    .funciona-grid {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .funciona-item {
+        width: 480px;
+        padding: 50px;
+    }
+
+    .funciona-item img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .funciona-title {
+        font-size: 30px;
+        text-align: left;
+        padding-left: 40px;
+    }
+
+    h2.destacado {
+        font-size: 32px;
+        padding: 25px 40px;
+    }
+}

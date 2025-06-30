@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Mensajes</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/mensajes.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+    <header>
+    <div class="logo">
+      <img src="./image/logo.png" alt="Logo">
+    </div>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./market.html">Marketplace</a></li>
+        <li class="dropdown">
+          <a href="#">Mi Cuenta <span class="arrow"></span></a>
+          <ul class="dropdown-content">
+            <li><a href="/login.html">Iniciar sesión</a></li>
+            <li><a href="/registro.html">Registro</a></li>
+            <li><a href="./likes.html">Mis Likes</a></li>
+            <li><a href="./formulario.html">Crear Anuncio</a></li>
+            <li><a href="./misAnuncios.html">Mis Anuncios</a></li>
+            <li><a href="./mensajes.html">Mis mensajes</a></li>
+          </ul>
+        </li>
+        <li><a href="./acercade.html">Acerca de nosotros</a></li>
+      </ul>
+    </nav>
+    <input type="text" class="search-bar" placeholder="Escribe y presiona Enter...">
+  </header>
+
+    <main>
+        <section class="chat-container">
+            <div class="tabs">
+            <button class="tab active" onclick="cambiarVista('vendiendo')">Vendiendo</button>
+            <button class="tab" onclick="cambiarVista('comprando')">Comprando</button>
+            </div>
+
+          <div class="chat-content">
+            <div class="listado" id="lista-anuncios">
+                <div class="column-title">
+                  <div class="anuncios-title">Anuncios</div>
+                  <div class="personas-title">Personas</div>
+                </div>
+
+                  <div class="contenido-anuncios" id="columna-anuncios"></div>
+                  <div class="contenido-personas" id="columna-personas"></div>
+            </div>
+
+              <div class="chat-box">
+                <div class="mensajes" id="mensajes"></div>
+                <div class="input-area">
+                  <input type="text" placeholder="Escribe tu mensaje..."  />
+                  <button>Enviar</button>
+                </div>
+              </div>
+          </div>
+
+        </section>
+    </main>
+
+
+
+    <footer>
+        <p>contacto</p>
+        <div class="social-media">
+            <a href="https://www.instagram.com/anyelitogv/"><img src="./image/Icon/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="./image/Icon/Tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="./image/Icon/fb.png" alt="Facebook"></a>
+            <a href="#"><img src="./image/Icon/icon-wpp.png" alt="WhatsApp"></a>
+        </div>
+  </footer>
+  <script src="./JavaScripts/session.js"></script> 
+  <script src="./JavaScripts/chats.js"></script>
+</body>
+</html>

@@ -193,6 +193,15 @@
   color: white;
 }
 
+.desactivado {
+  background-color: #ccc;
+  color: #555;
+  cursor: not-allowed;
+  border: none;
+  font-style: italic;
+}
+
+
 
 @media (min-width: 768px) {
 
