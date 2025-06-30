@@ -5,8 +5,12 @@ const upload = require('../middlewares/upload');
 const verificarToken = require('../middlewares/verificaToken');
 
 
+router.get('/destacados', anuncioController.destacados);
+
+
 router.get('/mis', verificarToken, anuncioController.obtenerMisAnuncios);
 router.get('/:id', anuncioController.obtenerAnuncioPorId);
+
 router.get('/', anuncioController.obtenerAnuncios);
 router.get('/categoria/:nombre', anuncioController.obtenerPorCategoria);
 

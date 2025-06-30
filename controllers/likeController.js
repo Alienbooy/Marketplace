@@ -1,5 +1,6 @@
 const likeRepo = require('../repositories/likeRepository');
 const imagenRepo = require('../repositories/imagenRepository');
+const anuncioRepo = require('../repositories/anuncioRepository');
 
 exports.obtenerLikes = async (req, res) => {
   try {
@@ -23,9 +24,20 @@ exports.obtenerLikes = async (req, res) => {
 exports.agregarLike = async (req, res) => {
   const usuarioId = req.user.id_usuario;
   const anuncioId = req.params.id;
+
   try {
-    await likeRepo.insertarLike(usuarioId, anuncioId);
+    const anuncio = await anuncioRepo.obtenerPorId(anuncioId);
+    if (!anuncio) {
+      return res.status(404).json({ message: 'Anuncio no encontrado.' });
+    }
+
+    if (anuncio.vendedor_id === usuarioId) {
+      return res.status(403).json({ message: 'No puedes guardar tu propio anuncio.' });
+    }
+
+    await likeRepo.guardarLike(usuarioId, anuncioId);
     res.json({ message: 'Anuncio guardado correctamente.' });
+
   } catch (error) {
     console.error('Error al guardar anuncio:', error);
     res.status(500).json({ message: 'Error al guardar anuncio.' });

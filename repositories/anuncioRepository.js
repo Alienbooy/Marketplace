@@ -40,18 +40,17 @@ exports.obtenerPorCategoria = async (nombreCategoria) => {
 
 exports.obtenerPorId = async (id) => {
   const sql = `
-    SELECT a.id, a.titulo, a.descripcion, a.precio, a.estado, 
-           a.vendedor_id,
-           c.nombre AS categoria, 
-           u.nombre_completo AS vendedor
+    SELECT a.id, a.titulo, a.descripcion, a.precio, a.estado, a.vendedor_id,
+           c.nombre AS categoria, u.nombre_completo AS vendedor
     FROM anuncio a
     JOIN categoria c ON a.categoria_id = c.id
-    JOIN usuario   u ON a.vendedor_id = u.id
+    JOIN usuario u ON a.vendedor_id = u.id
     WHERE a.id = $1
   `;
   const { rows } = await pool.query(sql, [id]);
   return rows[0];
 };
+
 
 
 exports.insertarImagen = async (anuncioId, url) => {
@@ -118,3 +117,20 @@ exports.actualizarAnuncio = async (id, { titulo, descripcion, precio, estado, ca
   return result.rows[0];
 };
 
+
+exports.obtenerMasLikeados = async () => {
+  const result = await pool.query(`
+    SELECT a.id, a.titulo, a.precio, a.estado,
+           u.nombre_completo AS vendedor,
+           COUNT(l.id) AS likes,
+           (SELECT url FROM imagen WHERE anuncio_id = a.id LIMIT 1) AS imagen
+    FROM anuncio a
+    JOIN usuario u ON u.id = a.vendedor_id
+    LEFT JOIN anuncio_guardado l ON l.anuncio_id = a.id
+    WHERE a.publicado = TRUE
+    GROUP BY a.id, u.nombre_completo
+    ORDER BY likes DESC
+    LIMIT 2
+  `);
+  return result.rows;
+};

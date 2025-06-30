@@ -165,3 +165,20 @@ exports.eliminarAnuncio = async (req, res) => {
     res.status(500).json({ message: 'Error del servidor' });
   }
 };
+
+
+exports.destacados = async (req, res) => {
+  try {
+    const destacados = await anuncioRepository.obtenerMasLikeados();
+    const listaConImagenes = await Promise.all(
+      destacados.map(async (anuncio) => {
+        const imagenes = await imagenRepository.obtenerImagenesPorAnuncio(anuncio.id);
+        return { ...anuncio, imagenes };
+      })
+    );
+    res.json(listaConImagenes);
+  } catch (error) {
+    console.error('Error al obtener destacados:', error);
+    res.status(500).json({ message: 'Error al obtener anuncios destacados.' });
+  }
+};

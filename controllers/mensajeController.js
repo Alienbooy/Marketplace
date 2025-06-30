@@ -4,7 +4,8 @@ const anuncioRepo = require('../repositories/anuncioRepository');
 
 exports.enviarMensaje = async (req, res) => {
   const { anuncio_id, conversacion_id, contenido } = req.body;
-  const remitente_id = req.user.id_usuario; // ⚠️ Usamos id_usuario como está en tu JWT
+  const remitente_id = req.user.id || req.user.id_usuario;
+
 
   if ((!anuncio_id && !conversacion_id) || !contenido) {
     return res.status(400).json({ mensaje: "Faltan datos obligatorios." });

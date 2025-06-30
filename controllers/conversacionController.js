@@ -21,7 +21,7 @@ exports.crearConversacion = async (req, res) => {
 
 exports.obtenerConversacionesVendiendo = async (req, res) => {
   try {
-    const usuario_id = req.user.id;
+    const usuario_id = req.user.id_usuario;
     const conversaciones = await repo.obtenerConversacionesDeMisAnuncios(usuario_id);
     res.json(conversaciones);
   } catch (error) {
@@ -32,7 +32,7 @@ exports.obtenerConversacionesVendiendo = async (req, res) => {
 
 exports.obtenerConversacionesComprando = async (req, res) => {
   try {
-    const usuario_id = req.user.id;
+    const usuario_id = req.user.id_usuario;
     const conversaciones = await repo.obtenerConversacionesPorUsuario(usuario_id);
     res.json(conversaciones);
   } catch (error) {
