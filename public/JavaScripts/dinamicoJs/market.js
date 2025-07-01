@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.createElement('section');
   container.classList.add('productos-grid');
 
+  const btnFiltrar = document.getElementById('btn-filtrar');
+  const selectCategorias = document.getElementById('select-categorias');
+
   document.querySelector('main').appendChild(container);
 
   async function cargarAnuncios(categoria = '') {
@@ -80,7 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  
     cargarAnuncios();
-  
+
+    if (btnFiltrar && selectCategorias) {
+      btnFiltrar.addEventListener('click', () => {
+        const categoria = selectCategorias.value;
+        cargarAnuncios(categoria);
+      });
+    }
+
+
     categoriasLinks.forEach(link => {
         link.addEventListener('click', e => {
         e.preventDefault();

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main2.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/categorias.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -42,8 +42,24 @@
     </header>
 
     <main>
+        <div class="filtro-categorias-select">
+            <select id="select-categorias">
+                <option value="">Elige una categoría</option>
+                <option value="Perifericos">Perifericos</option>
+                <option value="Celulares">Celulares</option>
+                <option value="Camaras">Camaras</option>
+                <option value="TV">TV</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Pc">Pc</option>
+                <option value="Consolas">Consolas</option>
+                <option value="Componentes">Componentes</option>
+            </select>
+            <button id="btn-filtrar">➤</button>
+        </div>
+
         <section>
             <nav class="categorias">
+                <h2 class="titulo">Categorías</h2>
                 <ul class="nav-categorias">
                     <li><a href="#">Perifericos</a></li>
                     <li><a href="#">Celulares</a></li>
