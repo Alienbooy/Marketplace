@@ -47,7 +47,7 @@ nav ul li a {
     cursor: pointer;
     gap: 5px;
     margin-left: auto;
-    z-index: 999;
+    z-index: 2;
 }
   
 .menu-toggle span {

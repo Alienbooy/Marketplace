@@ -20,9 +20,10 @@ main {
 
 h2 {
   font-family: Arial,sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   color: #FFD000;
   text-align: left;
+  margin-top: 10px;
   margin-bottom: 20px;
   padding: 20px 25px;
 }
@@ -38,7 +39,7 @@ h2 {
 .auth-buttonsOne button {
   background-color: rgb(255, 208, 0); 
     border: none;
-    border-radius: 1.9em; 
+    border-radius: 30px; 
     color: black; 
     font-size: 16px; 
     font-weight: 600; 
@@ -313,6 +314,10 @@ h2 {
   .form-side h2 {
     font-size: 24px;
   }
+
+  h2 {
+    font-size:24px;
+  }
   
   .funciona-title {
     text-align: center;
@@ -336,5 +341,12 @@ h2 {
   }
 }
 
+@media (min-width: 1024px) {
+  h2{
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  
+}
 
 

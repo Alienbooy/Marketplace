@@ -6,7 +6,7 @@ main {
 .form-anuncio-container {
   position: relative;
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 24px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 85%;
@@ -15,7 +15,7 @@ main {
 
 .form-anuncio-container h2 {
   text-align: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 19px;
   color: #111;
   font-size: 14px;
 }
@@ -40,13 +40,13 @@ form select {
 }
 
 form button {
-  margin-top: 1.5rem;
+  margin-top: 24px;
   width: 100%;
   background-color: #FFD000;
   border: none;
   color: #333;
   font-weight: bold;
-  padding: 0.9rem;
+  padding: 14.5px;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -60,8 +60,8 @@ form button:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 8px;
+  margin-top: 8px;
 }
 
 .img-prev {
@@ -75,8 +75,8 @@ form button:hover {
 
 .btn-cerrar {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 16px;
+  right: 24px;
   font-size: 24px;
   text-decoration: none;
   color: #fff;
@@ -108,7 +108,7 @@ form button:hover {
   }
 
   form button {
-    font-size: 1.1rem;
+    font-size: 18px;
   }
 
   form input, form textarea, form select {
@@ -119,7 +119,7 @@ form button:hover {
 @media (min-width: 1024px) {
   .form-anuncio-container {
     display: flex;
-    gap: 2rem;
+    gap: 32px;
     max-width: 950px;
   }
 
@@ -135,8 +135,8 @@ form button:hover {
     flex-direction: column;
     justify-content: flex-start;
     max-width: 200px;
-    margin-right: 1.5rem;
-    margin-top: 0.5rem;
+    margin-right: 24px;
+    margin-top: 8px;
   }
 
   .img-prev {
