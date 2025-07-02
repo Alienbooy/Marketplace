@@ -73,7 +73,6 @@ form button:hover {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Botón "X" de cerrar/volver atrás */
 .btn-cerrar {
   position: absolute;
   top: 1rem;

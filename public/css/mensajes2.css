@@ -147,7 +147,6 @@
   font-weight: bold;
 }
 
-/* TABLET */
 @media (min-width: 768px) {
   .main {
     flex-direction: row;
@@ -175,7 +174,6 @@
   }
 }
 
-/* PC / LAPTOP */
 @media (min-width: 1024px) {
   .main {
     flex-direction: row;

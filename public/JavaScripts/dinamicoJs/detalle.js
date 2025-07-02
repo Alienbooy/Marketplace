@@ -3,8 +3,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   const id = params.get('id');
   const contenedor = document.querySelector('.detalle-conteiner');
 
+ 
+  const btnVolver = document.createElement('button');
+  btnVolver.textContent = '←';
+  btnVolver.classList.add('btn-volver');
+  btnVolver.onclick = () => {
+    window.location.href = './market.html';
+  };
+  contenedor.appendChild(btnVolver);
+
   if (!id) {
-    contenedor.innerHTML = '<p style="text-align:center; margin:14px;">No se encontró el anuncio.</p>';
+    contenedor.innerHTML += '<p style="text-align:center; margin:14px;">No se encontró el anuncio.</p>';
     return;
   }
 
@@ -13,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const anuncio = await response.json();
 
     if (!anuncio) {
-      contenedor.innerHTML = '<p style="text-align:center; margin:14px;">Anuncio no disponible.</p>';
+      contenedor.innerHTML += '<p style="text-align:center; margin:14px;">Anuncio no disponible.</p>';
       return;
     }
 
@@ -83,13 +92,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     contenedor.appendChild(imagenContainer);
     contenedor.appendChild(info);
 
-    
     const btnLike = info.querySelector('.btn-like');
     if (btnLike && !esPropio) {
       btnLike.addEventListener('click', async () => {
-        if (!token) {
-          return;
-        }
+        if (!token) return;
 
         try {
           const res = await fetch(`/api/likes/${id}`, {
@@ -99,9 +105,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
           });
 
-          
           const data = await res.json();
-          // Verifica si la respuesta es exitosa y si el anuncio ya está guardado
           if (res.ok) {
             btnLike.disabled = true;
             btnLike.textContent = 'Guardado';
@@ -134,7 +138,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     showSlide(currentIndex);
 
-  
     const btnEnviar = info.querySelector('.btn-enviar');
     const inputMensaje = info.querySelector('input[type="text"]');
 
@@ -162,7 +165,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           });
 
           const data = await res.json();
-
           if (res.ok) {
             inputMensaje.value = '';
           } else {
