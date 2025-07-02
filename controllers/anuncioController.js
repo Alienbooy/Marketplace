@@ -182,3 +182,28 @@ exports.destacados = async (req, res) => {
     res.status(500).json({ message: 'Error al obtener anuncios destacados.' });
   }
 };
+
+
+exports.buscarAnuncios = async (req, res) => {
+  try {
+    const termino = req.query.q;
+    if (!termino) {
+      return res.status(400).json({ message: 'Término de búsqueda requerido.' });
+    }
+
+    const resultados = await anuncioRepository.buscarPorTexto(termino);
+
+    const resultadosConImagenes = await Promise.all(resultados.map(async (a) => ({
+      ...a,
+      imagenes: await imagenRepository.obtenerImagenesPorAnuncio(a.id)
+    })));
+
+    res.json(resultadosConImagenes);
+  } catch (error) {
+    console.error('Error al buscar anuncios:', error);
+    res.status(500).json({ message: 'Error en la búsqueda.' });
+  }
+};
+
+
+

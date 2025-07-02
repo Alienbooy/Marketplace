@@ -4,7 +4,7 @@ const anuncioController = require('../controllers/anuncioController');
 const upload = require('../middlewares/upload');
 const verificarToken = require('../middlewares/verificaToken');
 
-
+router.get('/buscar', anuncioController.buscarAnuncios);
 router.get('/destacados', anuncioController.destacados);
 
 

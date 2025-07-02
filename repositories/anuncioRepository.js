@@ -134,3 +134,19 @@ exports.obtenerMasLikeados = async () => {
   `);
   return result.rows;
 };
+
+exports.buscarPorTexto = async (termino) => {
+  const sql = `
+    SELECT a.*, c.nombre AS categoria, u.nombre_completo AS vendedor
+    FROM anuncio a
+    JOIN categoria c ON a.categoria_id = c.id
+    JOIN usuario u ON a.vendedor_id = u.id
+    WHERE a.titulo ILIKE $1
+      OR a.descripcion ILIKE $1
+      OR c.nombre ILIKE $1
+    ORDER BY a.id DESC
+  `;
+  const { rows } = await pool.query(sql, [`%${termino}%`]);
+  return rows;
+};
+
