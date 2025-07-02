@@ -19,7 +19,7 @@ exports.crearConversacion = async (anuncio_id, interesado_id) => {
   return rows[0];
 };
 
-// Conversaciones donde el usuario es el COMPRADOR
+
 exports.obtenerConversacionesPorUsuario = async (usuarioId) => {
   const result = await pool.query(`
     SELECT 
@@ -37,8 +37,6 @@ exports.obtenerConversacionesPorUsuario = async (usuarioId) => {
 };
 
 
-
-// Conversaciones donde el usuario es el VENDEDOR
 exports.obtenerConversacionesDeMisAnuncios = async (usuarioId) => {
   const result = await pool.query(`
     SELECT 
