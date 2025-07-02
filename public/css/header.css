@@ -39,7 +39,7 @@ nav ul.nav-list {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 17px;
 }
 .menu-toggle {
     display: flex;
@@ -103,44 +103,50 @@ header .dropdown:hover .arrow {
 
 
 @media (min-width: 768px) {
-    header .search-bar {
+  header {
+    padding: 8px 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  header .logo img {
+    max-width: 80px; 
+  }
+
+  .menu-toggle {
     display: none;
-    }
+  }
 
-    header {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-    }
+  header nav {
+    width: auto;
+    max-height: none;
+    display: flex;
+    flex-direction: row;
+  }
 
-    .menu-toggle {
-      display: flex;
-    }
-  
-    nav {
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-      background-color: #1F1F1F;
-      flex-direction: column;
-    }
-  
-    nav.active {
-      max-height: 500px;
-    }
-  
   nav ul.nav-list {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
-    padding: 15px 0;
-    display: flex;
+    padding: 0;
+  }
+
+  header .search-bar {
+    display: block;
+    width: 230px;
+    font-size: 12px;
+  }
+
+  header nav ul {
+    gap: 35px; 
+  }
+  header nav ul li a {
+    font-size: 13px;
   }
 }
 
 @media (min-width: 1024px) {
-header {
+  header {
     padding: 15px 30px;
     flex-wrap: nowrap;
     justify-content: space-between;

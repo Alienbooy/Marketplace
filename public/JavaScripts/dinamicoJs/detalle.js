@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (btnLike && !esPropio) {
       btnLike.addEventListener('click', async () => {
         if (!token) {
-          alert('Debes iniciar sesión para guardar anuncios.');
           return;
         }
 
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           const data = await res.json();
           // Verifica si la respuesta es exitosa y si el anuncio ya está guardado
           if (res.ok) {
-            alert('Anuncio guardado correctamente.');
             btnLike.disabled = true;
             btnLike.textContent = 'Guardado';
           } else {
@@ -166,7 +164,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           const data = await res.json();
 
           if (res.ok) {
-            alert('Mensaje enviado correctamente.');
             inputMensaje.value = '';
           } else {
             alert(data.mensaje || 'Error al enviar mensaje.');
